@@ -31,7 +31,7 @@ class TripHistoryLoaded extends TripHistoryState{
 class TripHistoryFailureState extends TripHistoryState {
   final String message;
 
-  TripHistoryFailureState(this.message);
+  const TripHistoryFailureState(this.message);
   @override
   List<Object> get props => [message];
 }

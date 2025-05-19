@@ -55,10 +55,10 @@ class DriverLocationCubit extends Cubit<DriverLocationState> {
 
   //method for uploading current location every minute
   updateDriverLocationEveryMinute(
-      GeoPoint geoPoint, DriverModel driverModel, bool is_online) async {
+      GeoPoint geoPoint, DriverModel driverModel, bool isOnline) async {
     try {
       final model = DriverLocationModel(
-        is_online: is_online,
+        is_online: isOnline,
         current_location: geoPoint,
         driver_id: driverModel.driver_id,
       );

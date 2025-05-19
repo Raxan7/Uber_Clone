@@ -100,9 +100,9 @@ class UberAuthController extends GetxController {
     profileImgUrl.value = profileUrl;
   }
 
-  addDriverProfile(String name, String email, String city, int vehicle_type,
-      String company, String model, String number_plate,BuildContext context) async {
-    final vehicle = checkVehicleType(vehicle_type);
+  addDriverProfile(String name, String email, String city, int vehicleType,
+      String company, String model, String numberPlate,BuildContext context) async {
+    final vehicle = checkVehicleType(vehicleType);
     final String driverId = await uberAuthGetUserUidUseCase.call();
     final path = FirebaseFirestore.instance.collection(vehicle).doc(driverId);
 
@@ -121,7 +121,7 @@ class UberAuthController extends GetxController {
     final vehicleEntity = VehicleEntity(
         comapany: company,
         model: model,
-        number_plate: number_plate,
+        number_plate: numberPlate,
         color: "unknown");
     await uberProfileUpdateDriverUsecase.call(driverEntity, driverId);
     await uberUploadDriverVehicleDataUseCase.call(path, vehicleEntity);
@@ -148,17 +148,14 @@ class UberAuthController extends GetxController {
 
   Future<String?> getUidOfCurrentUser() async {
     final String driverId = await uberAuthGetUserUidUseCase.call();
-    if (driverId == null) {
-      return null;
-    }
     return driverId;
   }
 }
 
-String checkVehicleType(int vehicle_type) {
-  if (vehicle_type == 1) {
+String checkVehicleType(int vehicleType) {
+  if (vehicleType == 1) {
     return "bikes";
-  } else if (vehicle_type == 2) {
+  } else if (vehicleType == 2) {
     return "auto";
   } else {
     return "cars";

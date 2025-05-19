@@ -7,7 +7,7 @@ Widget uberRegisterPageBody(
     TextEditingController city,
     TextEditingController company,
     TextEditingController model,
-    TextEditingController number_plate) {
+    TextEditingController numberPlate) {
   return Column(
     children: [
       Container(
@@ -67,7 +67,7 @@ Widget uberRegisterPageBody(
         labelText: 'Number Plate*',
         textType: 'Enter your vehicle Number plate',
         inputType: TextInputType.text,
-        controller: number_plate,
+        controller: numberPlate,
       ),
       const SizedBox(
         height: 20,

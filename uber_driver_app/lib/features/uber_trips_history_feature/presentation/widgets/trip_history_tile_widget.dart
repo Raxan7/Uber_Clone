@@ -6,7 +6,7 @@ import 'package:uber_driver_app/features/uber_trips_history_feature/domain/entit
 class TripHistoryTile extends StatefulWidget {
   final TripEntity tripHistoryEntity;
 
-  TripHistoryTile({required this.tripHistoryEntity, Key? key})
+  const TripHistoryTile({required this.tripHistoryEntity, Key? key})
       : super(key: key);
 
   @override
@@ -46,12 +46,12 @@ class _TripHistoryTileState extends State<TripHistoryTile> {
                       style: ButtonStyle(
                         backgroundColor: widget
                                 .tripHistoryEntity.tripHistoryModel.isCompleted!
-                            ? MaterialStateProperty.all(Colors.green)
+                            ? WidgetStateProperty.all(Colors.green)
                             : widget.tripHistoryEntity.tripHistoryModel
                                         .isArrived ==
                                     true
-                                ? MaterialStateProperty.all(Colors.orange)
-                                : MaterialStateProperty.all(Colors.blue),
+                                ? WidgetStateProperty.all(Colors.orange)
+                                : WidgetStateProperty.all(Colors.blue),
                       ),
                     ),
                     Row(
@@ -105,7 +105,7 @@ class _TripHistoryTileState extends State<TripHistoryTile> {
                 title: Text(
                   widget.tripHistoryEntity.tripHistoryModel.source.toString(),
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 leading: const Icon(Icons.my_location),
               ),
@@ -116,7 +116,7 @@ class _TripHistoryTileState extends State<TripHistoryTile> {
                   widget.tripHistoryEntity.tripHistoryModel.destination
                       .toString(),
                   overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                 ),
                 leading: const Icon(Icons.location_on_sharp),
               ),

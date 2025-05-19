@@ -4,9 +4,10 @@ class ProfileWidget extends StatelessWidget {
   final Function() onPressed;
   final String imgUrl;
 
-   ProfileWidget({ required this.onPressed, required this.imgUrl}) : super();
+   const ProfileWidget({Key? key,  required this.onPressed, required this.imgUrl}) : super(key: key);
 
 
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,

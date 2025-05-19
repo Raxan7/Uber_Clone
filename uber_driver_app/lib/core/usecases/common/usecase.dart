@@ -14,7 +14,7 @@ class NoParams extends Equatable {
 class Params extends Equatable {
   final Type type;
 
-  Params({required this.type});
+  const Params({required this.type});
 
   @override
   List<Object> get props => [type];

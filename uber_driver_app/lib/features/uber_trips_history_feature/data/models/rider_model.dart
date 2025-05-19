@@ -12,7 +12,10 @@ class RiderModel extends RiderEntity {
     );
   }
 
+  @override
   final String? name;
+  @override
   final String? rider_id;
+  @override
   final String? mobile;
 }

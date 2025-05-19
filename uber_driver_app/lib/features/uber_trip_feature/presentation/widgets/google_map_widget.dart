@@ -12,7 +12,7 @@ class GoogleMapWidget extends StatefulWidget {
   Map<MarkerId, Marker>? markers;
   Map<PolylineId, Polyline>? polylines;
 
-  GoogleMapWidget(this.markers, this.polylines);
+  GoogleMapWidget(this.markers, this.polylines, {Key? key}) : super(key: key);
 
   @override
   State<GoogleMapWidget> createState() => _GoogleMapWidgetState();

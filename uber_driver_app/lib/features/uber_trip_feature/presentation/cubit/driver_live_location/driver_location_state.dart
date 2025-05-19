@@ -28,7 +28,7 @@ class  DriverLocationLoaded extends DriverLocationState{
 class  DriverLocationFailureState extends DriverLocationState {
   final String message;
 
-  DriverLocationFailureState(this.message);
+  const DriverLocationFailureState(this.message);
   @override
   List<Object> get props => [message];
 }

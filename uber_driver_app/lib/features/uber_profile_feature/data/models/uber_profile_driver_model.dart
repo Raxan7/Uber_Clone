@@ -2,16 +2,27 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_driver_app/features/uber_profile_feature/domain/entities/driver_entity.dart';
 
 class DriverProfileModel extends DriverEntity {
+  @override
   final String? name;
+  @override
   final String? email;
+  @override
   final bool? is_online;
+  @override
   final String? mobile;
+  @override
   final String? overall_rating;
+  @override
   final String? profile_img;
+  @override
   final int? wallet;
+  @override
   final DocumentReference? vehicle;
+  @override
   final GeoPoint? current_location;
+  @override
   final String? driver_id;
+  @override
   final String? city;
 
   const DriverProfileModel(

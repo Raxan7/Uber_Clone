@@ -6,8 +6,7 @@ class NoInternetWidget extends StatelessWidget {
   const NoInternetWidget({
     Key? key,
     required this.message,
-  })  : assert(message != null),
-        super(key: key);
+  })  : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class NoInternetWidget extends StatelessWidget {
                 )),
                 Text(
                   message,
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.titleLarge,
                   textAlign: TextAlign.center,
                 ),
               ],

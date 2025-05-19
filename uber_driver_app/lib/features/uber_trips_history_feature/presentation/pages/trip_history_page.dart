@@ -25,7 +25,7 @@ class _TripHistoryState extends State<TripHistory> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text("Your Trips"),
+        title: const Text("Your Trips"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -36,7 +36,7 @@ class _TripHistoryState extends State<TripHistory> {
                 child: Text("No History Found."),
               );
             } else if (state is TripHistoryLoading) {
-              return LoadingWidget();
+              return const LoadingWidget();
             } else if (state is TripHistoryLoaded) {
               return _buildListWidget(context, state.tripHistoryList);
             } else if (state is TripHistoryFailureState) {

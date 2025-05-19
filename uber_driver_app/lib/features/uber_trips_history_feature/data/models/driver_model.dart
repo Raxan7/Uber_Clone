@@ -30,15 +30,22 @@ class DriverModel extends DriverEntity {
     };
   }
 
+  @override
   final bool? is_online;
+  @override
   final String? driver_id;
+  @override
   final String? profile_img;
+  @override
   final GeoPoint? current_location;
 }
 
 class DriverLocationModel extends DriverModel {
+  @override
   final bool? is_online;
+  @override
   final String? driver_id;
+  @override
   final GeoPoint? current_location;
 
   const DriverLocationModel(

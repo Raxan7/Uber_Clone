@@ -5,8 +5,8 @@ class FunctionalButton extends StatelessWidget {
   final IconData icon;
   final Function() onPressed;
 
-     FunctionalButton({ required this.title, required this.icon, required this.onPressed})
-      : super();
+     const FunctionalButton({Key? key,  required this.title, required this.icon, required this.onPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,9 @@ class FunctionalButton extends StatelessWidget {
           splashColor: Colors.black,
           fillColor: Colors.white,
           elevation: 15.0,
-          shape: CircleBorder(),
+          shape: const CircleBorder(),
           child: Padding(
-              padding: EdgeInsets.all(14.0),
+              padding: const EdgeInsets.all(14.0),
               child: Icon(
                 icon,
                 size: 30.0,

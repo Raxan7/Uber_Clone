@@ -44,8 +44,8 @@ Widget buildStaticOtpVerificationBody() {
 }
 
 Widget buildBottomOtpVerificationBody() {
-  return Column(
-    children: const [
+  return const Column(
+    children: [
       SizedBox(
         height: 18,
       ),

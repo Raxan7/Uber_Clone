@@ -13,7 +13,7 @@ class UserReqInitial extends UserReqState {
 
 
 class UserReqLoading extends UserReqState{
-   UserReqLoading();
+   const UserReqLoading();
 
   @override
   // TODO: implement props
@@ -24,7 +24,7 @@ class UserReqLoading extends UserReqState{
 
 class UserReqLoaded extends UserReqState{
   final List<TripEntity> tripHistoryList;
-  UserReqLoaded({required this.tripHistoryList});
+  const UserReqLoaded({required this.tripHistoryList});
 
   @override
   // TODO: implement props
@@ -43,7 +43,7 @@ class UserReqDisplayOne extends UserReqState{
 class UserReqFailureState extends UserReqState {
   final String message;
 
-  UserReqFailureState(this.message);
+  const UserReqFailureState(this.message);
   @override
   List<Object> get props => [message];
 }

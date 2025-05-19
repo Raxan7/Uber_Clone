@@ -47,9 +47,9 @@ Widget uberAuthLoginButton() {
         Get.to(() => const PhoneVerificationPage());
       },
       style: ButtonStyle(
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+        backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(24.0),
           ),

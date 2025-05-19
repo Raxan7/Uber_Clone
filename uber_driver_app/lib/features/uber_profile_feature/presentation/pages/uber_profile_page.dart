@@ -82,7 +82,7 @@ class _UberProfilePageState extends State<UberProfilePage> {
                     ),
                     Text(
                     _uberProfileController.driverData.value["overall_rating"].toString() ,
-                      style: TextStyle(fontWeight: FontWeight.w600),
+                      style: const TextStyle(fontWeight: FontWeight.w600),
                     )
                   ],
                 ),
@@ -104,8 +104,8 @@ class _UberProfilePageState extends State<UberProfilePage> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(12)),
                             color: Colors.grey[100]),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             FaIcon(FontAwesomeIcons.hireAHelper),
                             SizedBox(
                               height: 5,
@@ -123,8 +123,8 @@ class _UberProfilePageState extends State<UberProfilePage> {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(12)),
                             color: Colors.grey[100]),
-                        child: Column(
-                          children: const [
+                        child: const Column(
+                          children: [
                             FaIcon(FontAwesomeIcons.wallet),
                             SizedBox(
                               height: 5,
@@ -154,8 +154,8 @@ class _UberProfilePageState extends State<UberProfilePage> {
                               borderRadius:
                                   const BorderRadius.all(Radius.circular(12)),
                               color: Colors.grey[100]),
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               FaIcon(FontAwesomeIcons.solidClock),
                               SizedBox(
                                 height: 5,

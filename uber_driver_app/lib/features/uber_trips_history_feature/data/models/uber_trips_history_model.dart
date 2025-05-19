@@ -2,20 +2,35 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:uber_driver_app/features/uber_trips_history_feature/domain/entities/trips_history_entity.dart';
 
 class TripHistoryModel extends TripHistoryEntity {
+  @override
   final String? source;
+  @override
   final String? destination;
+  @override
   final GeoPoint? sourceLocation;
+  @override
   final GeoPoint? destinationLocation;
+  @override
   final double? distance;
+  @override
   final String? travellingTime;
+  @override
   final String? tripDate;
+  @override
   final String? tripId;
+  @override
   final bool? isCompleted;
+  @override
   final int? tripAmount;
+  @override
   final double? rating;
+  @override
   final DocumentReference? driverId;
+  @override
   final DocumentReference? riderId;
+  @override
   final bool? isArrived;
+  @override
   final bool? ready_for_trip;
 
   factory TripHistoryModel.fromSnapshot(DocumentSnapshot documentSnapshot) {

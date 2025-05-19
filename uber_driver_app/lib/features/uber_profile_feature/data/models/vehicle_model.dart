@@ -28,9 +28,13 @@ class VehicleModel extends VehicleEntity {
     };
   }
 
+  @override
   final String? color;
+  @override
   final String? comapany;
+  @override
   final String? model;
+  @override
   final String? number_plate;
 
 }

@@ -22,7 +22,7 @@ class UberAuthRepositoryImpl extends UberAuthRepository {
 
   @override
   Future<String> uberAuthGetUserUid() async {
-    return await uberAuthDataSource.uberAuthGetUserUid();
+    return uberAuthDataSource.uberAuthGetUserUid();
   }
 
   @override

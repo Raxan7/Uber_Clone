@@ -47,12 +47,12 @@ class UberMapCubit extends Cubit<UberMapState> {
           state.tripDriver.tripHistoryModel.destinationLocation!.longitude;
 
       //for way point
-      String pickup_point = state.tripDriver.tripHistoryModel.source.toString();
+      String pickupPoint = state.tripDriver.tripHistoryModel.source.toString();
 
       /// source location/pickup point marker
 
       MarkerId markerId = const MarkerId("pickupPoint");
-      Marker source_marker = Marker(
+      Marker sourceMarker = Marker(
           markerId: markerId,
           icon: BitmapDescriptor.defaultMarker,
           position: LatLng(
@@ -60,18 +60,18 @@ class UberMapCubit extends Cubit<UberMapState> {
             _source_long,
           ),
           infoWindow: const InfoWindow(title: "Pickup Point"));
-      markers[markerId] = source_marker;
+      markers[markerId] = sourceMarker;
 
       /// destination marker
       MarkerId markerDestId = const MarkerId("destPoint");
-      Marker dest_marker = Marker(
+      Marker destMarker = Marker(
           markerId: markerDestId,
           icon: BitmapDescriptor.defaultMarkerWithHue(90),
           position: LatLng(_destination_lat, _destination_long),
           infoWindow: const InfoWindow(title: "Destination"));
 
       ///add marker to markers list
-      markers[markerDestId] = dest_marker;
+      markers[markerDestId] = destMarker;
 
       //get current location for drawing root
       await Geolocator.getCurrentPosition(
@@ -83,22 +83,22 @@ class UberMapCubit extends Cubit<UberMapState> {
         print(e);
       });
       _getPolyline(_current_lat, _current_long, _destination_lat,
-          _destination_long, pickup_point);
+          _destination_long, pickupPoint);
     } else {
       print("route is already drawn.");
     }
   }
 
-  _getPolyline(double source_lat, double source_long, double dest_lat,
-      double dest_long, String pickup_point) async {
+  _getPolyline(double sourceLat, double sourceLong, double destLat,
+      double destLong, String pickupPoint) async {
 
     emit(UberMapLoading());
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
         apiKey,
-        PointLatLng(source_lat, source_long),
-        PointLatLng(dest_lat, dest_long),
+        PointLatLng(sourceLat, sourceLong),
+        PointLatLng(destLat, destLong),
         travelMode: TravelMode.driving,
-        wayPoints: [PolylineWayPoint(location: pickup_point)]);
+        wayPoints: [PolylineWayPoint(location: pickupPoint)]);
     if (result.points.isNotEmpty) {
       for (var point in result.points) {
         polylineCoordinates.add(LatLng(point.latitude, point.longitude));
